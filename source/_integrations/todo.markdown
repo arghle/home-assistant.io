@@ -155,3 +155,21 @@ action: todo.remove_completed_items
 target:
   entity_id: todo.personal_tasks
 ```
+
+### Action `todo.remove_all_items`
+
+Removes all to-do items (both completed and incomplete) from a to-do list. A to-do list `target` is selected with a [Target Selector](/docs/blueprint/selectors/#target-selector).
+
+{% caution %}
+This action permanently removes all items from the list and cannot be undone. Use with caution in automations and scripts.
+{% endcaution %}
+
+This can be useful in automations or scripts to clear out a to-do list before re-populating it using `todo.add_item`.
+
+This is a full example that deletes all to-do items.
+
+```yaml
+action: todo.remove_all_items
+target:
+  entity_id: todo.recurring_tasks
+```
